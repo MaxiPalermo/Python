@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Inicio{% endblock %}
+
+{% block content %}
+    <h2>Posts</h2>
+
+    {% if posts %}
+        {% for post in posts %}
+            <p><strong>{{ post.titulo }}</strong> — {{ post.autor.nombre }}</p>
+        {% endfor %}
+    {% else %}
+        <p>No hay posts todavía.</p>
+    {% endif %}
+{% endblock %}

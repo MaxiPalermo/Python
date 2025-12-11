@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}Buscar{% endblock %}
+
+{% block content %}
+    <h2>Buscar Posts</h2>
+
+    <form method="GET">
+        <input type="text" name="titulo" placeholder="Buscar por título">
+        <button type="submit">Buscar</button>
+    </form>
+
+    <h3>Resultados:</h3>
+    {% for post in posts %}
+        <p>{{ post.titulo }} — {{ post.autor.nombre }}</p>
+    {% empty %}
+        <p>No se encontraron resultados.</p>
+    {% endfor %}
+{% endblock %}
